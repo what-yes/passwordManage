@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--    <link rel="stylesheet" href="../static/css/main.css">-->
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="head">
+        <a th:href="@{/account/add/{uId}(uId=${uId})}" th:text="添加" th:type="button"></a>
+        <a th:href="@{/account/{uid}(uid=${uId})}" th:text="查询" class="btn btn-danger btn-sm"></a>
+        <a th:href="@{/logout}" th:text="退出" class="btn btn-danger btn-sm"></a>
+    </div>
+    <div id="info">
+        <table>
+            <tr>
+                <td>序号</td>
+                <td>平台</td>
+                <td>密码</td>
+                <td>操作</td>
+            </tr>
+            <tr th:each="account:${accounts}">
+                <td th:text="${account.getApp()}"></td>
+                <td th:text="${account.getAccount()}"></td>
+                <td th:text="${account.getApp()}"></td>
+                <td>
+                    <a th:href="@{ '/account/delete/'+${account.getAId()}}" th:text="删除"></a>
+                    <a th:href="@{/account/add/{uid}/{aid}(uid=${account.getUId()},aid=${account.getAId()})}" th:text="修改"></a>
+                    <!--                <a th:href="@{/account/delete/id(id=${account.getApp()})}" th:text="删除"></a>-->
+                    <!--                <a th:href="@{/account/delete/1}" th:text="删除"></a>-->
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--    <link rel="stylesheet" href="../static/css/index.css">-->
+    <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="main">
+        <label style="color: red" th:text="${msg}"></label>
+        <form action="/login" method="post" content="application/json">
+            账号：<input name="name" type="text"><br><br>
+            密码：<input name="password" type="password"><br><br>
+            <div id="submit">
+                <input type="submit">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

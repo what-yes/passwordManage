@@ -1,0 +1,24 @@
+#main{
+    width: 250px;
+    marginarea: auto;
+    margin-top: 50px;
+}
+
+input{
+    border-radius: 4px;
+}
+
+input[type=text]{
+    background-color: aquamarine;
+}
+
+input[type=submit]{
+    width: 30%;
+    margin: auto;
+}
+
+
+input[type=submit]:hover{
+    background-color: bisque;
+
+}
